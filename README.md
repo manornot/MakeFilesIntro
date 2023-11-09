@@ -65,5 +65,3 @@ To get started with Makefiles:
 Understanding Makefiles is essential for automating and streamlining the build process in C projects. With the basic concepts and examples provided, you should be well on your way to creating efficient Makefiles for your tasks.
 
 ---
-
-Adjust the content to fit the specifics of your course, and consider adding examples that are relevant to the types of assignments you'll be giving.
