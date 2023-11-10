@@ -56,6 +56,19 @@ To get started with Makefiles:
 - Include a `.PHONY` target to safeguard against files named `clean` or `all`.
 - Keep your Makefile updated as your project grows and dependencies change.
 
+
+Below are some task ideas for creating Makefiles in C projects that can be automatically tested:
+
+### Task 1: Simple Compilation
+**Objective**: Write a Makefile to compile a single `main.c` file into an executable `main`.
+
+**Requirements**:
+- The `main.c` file includes at least one `printf` statement.
+- The Makefile must define a `CC` variable for the compiler (e.g., gcc).
+- The Makefile must define a `CFLAGS` variable for compiler options.
+- The target for the executable should be called `all`.
+- Include a `clean` target that removes the executable.
+
 ## Resources
 - [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
 - [Makefile Tutorial](https://makefiletutorial.com/)
