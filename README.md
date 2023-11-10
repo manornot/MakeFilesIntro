@@ -57,10 +57,24 @@ To get started with Makefiles:
 - Keep your Makefile updated as your project grows and dependencies change.
 
 
-Below are some task ideas for creating Makefiles in C projects that can be automatically tested:
+`.PHONY` in a Makefile is used to tell the `make` command that a certain name isn't a file, but rather a command you want to run. For example, you often see a `clean` command in Makefiles, which is used to delete all the files that were created when you compiled your program, so you can start fresh.
 
-Here are some simpler tasks for creating Makefiles, along with a bash script that could be used to test each task automatically.
+Here's a simple example:
 
+Imagine you have a file named `clean` in your project folder. Normally, `make` looks for files to know what to do. If you run `make clean`, `make` sees that there's a file named `clean` and thinks "Oh, the file is already here, so there's nothing for me to do." But that's not what you want; you want `make` to run the `clean` command, not look for a file named `clean`.
+
+That's where `.PHONY` comes in. If you tell `make` that `clean` is `.PHONY`, it knows to run the `clean` command no matter what, even if there's a file named `clean` around.
+
+Here's how you write it in the Makefile:
+
+```makefile
+.PHONY: clean
+
+clean:
+    rm *.o myprogram
+```
+
+With `.PHONY`, when you type `make clean`, it will run the command to delete all `.o` files and the `myprogram` executable, even if a file named `clean` exists in the directory.
 
 ### Task 1: Basic Makefile
 **Objective**: Write a Makefile that compiles `program.c` into an executable named `program`.
