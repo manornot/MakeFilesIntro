@@ -10,7 +10,7 @@ def test_basic_makefile():
     assert os.path.isfile("program"), "Executable 'program' not created"
 
 # Call the test function
-test_basic_makefile()
+
 
 def test_clean_target():
     # Ensure the executable 'program' exists
@@ -24,7 +24,6 @@ def test_clean_target():
     assert not os.path.isfile("program"), "Executable 'program' not removed by clean"
 
 # Call the test function
-test_clean_target()
 
 def test_phony_targets():
     # Create a file named 'clean'
@@ -41,4 +40,6 @@ def test_phony_targets():
     os.remove('clean')
 
 # Call the test function
+test_basic_makefile()
+test_clean_target()
 test_phony_targets()
